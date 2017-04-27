@@ -1,6 +1,8 @@
 ﻿
-var Service = Service ? Service : {};
+var Service = typeof Service === "undefined" ? {} : Service;
 Service.Home = (function () {
+    var homeTableId = "currentTable";
+
     function loadTableData() {
         // return $.ajax({
         //     type: "GET",
@@ -8,8 +10,8 @@ Service.Home = (function () {
         //     data: null,
         //     dataType: "json"
         // });
-
-        return {
+        var dfd = $.Deferred();
+        var currentResult = {
             data: [{
                 Name: "Pesho",
                 Age: 15
@@ -18,6 +20,9 @@ Service.Home = (function () {
                 Age: 13
             }]
         };
+
+        dfd.resolve(currentResult);
+        return dfd;
     }
 
     function loadTableSettings() {
@@ -42,6 +47,7 @@ Service.Home = (function () {
 
     return {
         loadTableData: loadTableData,
-        loadTableSettings: loadTableSettings
+        loadTableSettings: loadTableSettings,
+        homeTableId: homeTableId
     }
 }());

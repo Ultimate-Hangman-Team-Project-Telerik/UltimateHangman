@@ -5,13 +5,17 @@ ViewModel.Home = function () {
     self.currentTable;
 
     self.loadTable = function (id) {
-        $.when(Service.Home.loadTableSettings(), Service.Home.loadTableData)
+        var dfd = $.Deferred();
+        $.when(Service.Home.loadTableSettings(), Service.Home.loadTableData())
             .done(function (settingsResponse, tableResponse) { 
                 self.currentTable = $("#" + id).DataTable(settingsResponse);
                 self.currentTable
                     .rows
-                    .add(tableResponse().data)
+                    .add(tableResponse.data)
                     .draw();
+
+                dfd.resolve("Table loaded!");
             });
+        return dfd;
     }
 };
