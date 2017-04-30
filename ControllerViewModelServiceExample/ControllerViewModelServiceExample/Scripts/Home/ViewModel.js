@@ -11,8 +11,8 @@ ViewModel.Home = function () {
                 self.currentTable = $("#" + id).DataTable(settingsResponse);
                 self.currentTable
                     .rows
-                    .add(tableResponse.data)
-                    .draw();
+                     .add(tableResponse.data)
+                   .draw();
 
                 dfd.resolve("Table loaded!");
             });
