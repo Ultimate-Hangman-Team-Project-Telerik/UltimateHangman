@@ -1,18 +1,19 @@
 ﻿var express = require('express');
+var userController = require('../controllers/userController');
 var router = express.Router();
 
 /* GET users listing. */
-router.get("getUserParameters", function (req, res) { 
+router.get("/getUserParameters", function (req, res) { 
     res.send("get user parameters");
 });
 
-router.get("getLeaderboardTable", function (req, res) { 
+router.get("/getLeaderboardTable", function (req, res) { 
     res.send("get leaderboard table");
 });
 
 /* POST users listing. */
-router.post("/login", function (req, res) {
-    res.send("respond logIn");
+router.post("/userLogin", function (req, res) {
+    userController.login(req, res);
 });
 
 router.post("/register", function (req, res) { 

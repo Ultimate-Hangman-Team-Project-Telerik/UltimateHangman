@@ -1,4 +1,5 @@
-﻿var express = require('express');
+﻿/* Libraries request */
+var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -8,7 +9,10 @@ var server = require("./core/server");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var level = require('./routes/level');
 
+
+/* App initialization */
 var app = express();
 
 //app.set('port', 8098);
@@ -23,12 +27,15 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(cookieParser());
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+/* Url paths initialization */
 app.use('/', routes);
 app.use('/users', users);
+app.use('/level', level);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -61,6 +68,8 @@ app.use(function (err, req, res, next) {
     });
 });
 
+
+/* file exportation */
 module.exports = app;
 
 //server.createServer(app);

@@ -1,9 +1,10 @@
 ﻿var express = require('express');
+var wordController = require("../controllers/wordController");
 var router = express.Router();
 
 /* GET users listing. */
 router.get("/getLevel", function (req, res) {
-    res.send("get level");
+    wordController.getWord(req, res);
 });
 
 router.post("/levelFinish", function (req, res) {

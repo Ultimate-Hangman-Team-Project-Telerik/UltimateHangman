@@ -4,6 +4,17 @@
     <title><%= title %></title>
   </head>
   <body>
-	<h3>Play</h3>
+	<form action="/users/userLogin" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+    </form>
   </body>
 </html>

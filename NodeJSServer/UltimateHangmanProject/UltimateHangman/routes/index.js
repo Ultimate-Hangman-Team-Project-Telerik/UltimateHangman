@@ -5,7 +5,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Ultimate Hangman', people: [{ name: "Petar" }, { name: "Ivan" }] });
+    res.render('home/home', { title: 'Ultimate Hangman', people: [{ name: "Petar" }, { name: "Ivan" }] });
+});
+
+router.get('/login', function (req, res) {
+    res.render('account/login', { title: 'Login' });
 });
 
 module.exports = router;
