@@ -116,7 +116,6 @@ $(loginContainer).attr('id', 'login-container');
 $(loginContainer).attr('class', 'col-xs-3 col-sm-3 col-md-3 col-lg-3');
 $(loginContainer).appendTo(header);
 
-
 //NAVIGATION
 let     navContainer = $(div).clone(true),
         navUl = $(ul).clone(true),   
