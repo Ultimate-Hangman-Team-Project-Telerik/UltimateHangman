@@ -98,7 +98,6 @@ $(signInButton).attr('class', 'btn btn-primary');
 $(signInButton).attr('value', 'Sign in')
 $(signInButton).appendTo(formLogIn);
 
-
 //REGISTER BUTTON
 $(registerButton).attr('id', 'register');
 $(registerButton).attr('type', 'submit');
