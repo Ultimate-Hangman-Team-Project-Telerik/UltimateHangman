@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
@@ -6,4 +6,21 @@
   <body>
 	<h3>Play</h3>
   </body>
-</html>
+</html> -->
+
+<h1>Sign in:</h1>  
+<form id="ajax-sign-in" method="POST" action="#">
+    <div class="sign-in-field">
+        <input type="text" id="sign-in-username" name="sign-in-username" placeholder="Username/email*" minlenght="6" maxlength="30" required>
+    </div>
+    <div class="sign-in-field">
+        <input type="password" id="sign-in-password" name="sign-in-password" placeholder="Password*" minlenght="6" maxlength="30" required>
+    </div>
+    <div class="sign-in-submit-btn">
+        <input type="button" id="sign-in-submit" value="Sign in"></input>
+    </div>
+
+    <div class="sign-in-register-btn">
+        <input type="button" id="sign-in-register" value="Register"></input>
+    </div>
+</form>
