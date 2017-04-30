@@ -64,6 +64,7 @@ const   loginContainer = $(div).clone(true),
 //USERNAME/EMAIL FIELD
 $(username).attr('id', 'username');
 $(username).attr('type', 'text');
+$(username).attr('name', 'username');
 $(username).attr('placeholder', 'Username/Email*');
 $(username).attr('maxlength', '30');
 $(username).attr('required', 'required');
@@ -78,6 +79,7 @@ $(username).appendTo(formLogIn);
 //PASSWORD FIELD
 $(password).attr('id', 'password');
 $(password).attr('type', 'password');
+$(password).attr('name', 'password');
 $(password).attr('placeholder', 'Password*');
 $(password).attr('maxlength', '30');
 $(password).attr('required', 'required');
