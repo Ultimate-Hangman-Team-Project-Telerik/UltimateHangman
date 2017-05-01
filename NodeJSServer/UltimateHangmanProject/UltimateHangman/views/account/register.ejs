@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
@@ -6,4 +6,29 @@
   <body>
 	<h3>Play</h3>
   </body>
-</html>
+</html> -->
+
+<h1>Register form:</h1>  
+<form id="ajax-register" method="POST" action="#">
+    <div class="register-field">
+        <input type="text" id="register-username" name="username" placeholder="Username*" minlenght="6" maxlength="30" required>
+    </div>
+    <div class="register-field">
+        <input type="password" id="register-password" name="register-password" placeholder="Password*" minlenght="6" maxlength="30" required>
+    </div>
+    <div class="register-field">
+        <input type="password" id="register-repeat-password" name="register-repeat-password" placeholder="Repeat password*" minlenght="6" maxlength="30" required>
+    </div>
+    <div class="register-field">
+        <input type="text" id="register-full-name" name="register-full-name" placeholder="Full name" minlenght="6"maxlength="30">
+    </div>
+    <div class="register-field">
+        <input type="email" id="register-email" name="register-email" placeholder="Email">
+    </div>
+    <div class="register-btn">
+        <input type="button" id="register-button" value="Register"></input>
+    </div>
+    <div class="clear-btn">
+        <input type="reset" id="register-clear" value="Clear form"></input>
+    </div>
+</form>

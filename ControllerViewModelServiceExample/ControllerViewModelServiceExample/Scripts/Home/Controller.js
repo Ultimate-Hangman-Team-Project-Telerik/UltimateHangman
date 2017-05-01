@@ -12,7 +12,7 @@ Controller.Home = (function() {
     function init() {
         model.loadTable(id)
             .done(function (resp) {
-                alert(resp);
+            return(resp);
             });
     }
 }());

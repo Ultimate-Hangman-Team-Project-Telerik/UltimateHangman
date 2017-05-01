@@ -43,6 +43,8 @@ Service.Home = (function () {
 
         dfd.resolve(settings);
         return dfd;
+          console.log(dfd)
+
     }
 
     return {
