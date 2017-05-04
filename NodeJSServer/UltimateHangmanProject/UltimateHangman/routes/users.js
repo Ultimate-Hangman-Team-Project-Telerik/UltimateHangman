@@ -20,6 +20,11 @@ router.post("/register", function (req, res) {
     res.send("respond register");
 });
 
+router.post("/userRegistration", function (req, res) {
+    userController.register(req, res);
+
+});
+
 module.exports = router;
 
 //module.exports.users = function (req, res) {
