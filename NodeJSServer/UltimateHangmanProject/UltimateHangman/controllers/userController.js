@@ -26,3 +26,33 @@ exports.login = function (req, res) {
         res.end();
     });
 }
+
+exports.register = function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    var fullname = req.body.fullname;
+    var email = req.body.email;
+
+    var options = { 
+        method: 'POST',
+        url: settings.url + '/accountUsers',
+        qs: { query: '{"$and": [{"username": "' + username + '", "password": "' + password + '"}]}' },
+        headers: settings.headers,
+         formData: { 
+            username: `${username}`,
+            password: `${password}`,
+            fullname: `${fullname}`,
+            email: `${email}`,
+        }
+
+    };
+
+
+    request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+
+    console.log(body.username);
+      res.write(body);
+        res.end();
+    });
+}
