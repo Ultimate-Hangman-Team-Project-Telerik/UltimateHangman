@@ -108,7 +108,7 @@ $(window).on('load', function () {
     //FORM-CONTAINER
     $(formLogIn).attr('id', 'form-login');
     $(formLogIn).attr('method', 'POST');
-    $(formLogIn).attr('action', '#');
+    $(formLogIn).attr('action', '/users/userLogin');
     $(formLogIn).appendTo(loginContainer);
     
     //LOG IN CONTAINER

@@ -7,7 +7,7 @@ exports.login = function (req, res) {
     
     var options = {
         method: 'GET',
-        url: settings.url + '/accountUsers',
+        url: settings.url + '/accountUsers/_count',
         qs: { query: '{"$and": [{"username": "' + username + '", "password": "' + password + '"}]}' },
         headers: settings.headers,
         formData: {
@@ -18,12 +18,19 @@ exports.login = function (req, res) {
         }
     };
     
-    request(options, function (error, response, body) {
+    request(options, function (error, response, responseData) {
         if (error) throw new Error(error);
+        console.log(responseData);
         
-        console.log(body);
-        res.write(body);
-        res.end();
+        if (JSON.parse(responseData)["count"] == 1) {
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.write(JSON.stringify({ status: "success", message: "User logged in successfully!" }));
+            res.end();
+        } else {
+            res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });
+            res.write(JSON.stringify({ status: "error", message: "Error: Login information is not correct!" }));
+            res.end();
+        }
     });
 }
 
@@ -34,19 +41,19 @@ exports.register = function (req, res) {
     var fullname = req.body.fullname;
     var email = req.body.email;
     
-    if (password != repeatPassword) {        
+    if (password != repeatPassword) {
         res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });
         res.write(JSON.stringify({ status: "error", message: "Error: Password must equal with repeat password!" }));
         res.end();
         return;
-    }    
-
+    }
+    
     var options = {
         method: 'GET',
         url: settings.url + '/accountUsers/_count',
         qs: { query: '{"username": "' + username + '"}' },
         headers: settings.headers
-    };    
+    };
     
     request(options, function (error, response, responseData) {
         if (error) throw new Error(error);
