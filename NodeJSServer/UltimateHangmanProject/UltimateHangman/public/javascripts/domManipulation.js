@@ -100,7 +100,7 @@ $(window).on('load', function () {
     
     //REGISTER BUTTON
     $(registerButton).attr('id', 'register');
-    $(registerButton).attr('type', 'submit');
+    $(registerButton).attr('onclick', 'window.location.href="/register"');
     $(registerButton).attr('class', 'btn btn-primary');
     $(registerButton).attr('value', 'Register');
     $(registerButton).appendTo(formLogIn);

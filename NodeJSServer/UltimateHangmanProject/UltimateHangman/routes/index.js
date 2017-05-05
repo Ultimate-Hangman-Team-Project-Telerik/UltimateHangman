@@ -8,8 +8,14 @@ router.get('/', function (req, res) {
     res.render('index', { title: 'Ultimate Hangman', people: [{ name: "Petar" }, { name: "Ivan" }] });
 });
 
+/* GET login page */
 router.get('/login', function (req, res) {
     res.render('account/login', { title: 'Login' });
+});
+
+/* GET register page */
+router.get('/register', function (req, res) { 
+    res.render('account/register', { title: 'Register' });
 });
 
 module.exports = router;
