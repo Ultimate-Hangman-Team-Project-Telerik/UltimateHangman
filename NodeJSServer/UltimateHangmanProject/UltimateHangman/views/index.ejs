@@ -17,14 +17,13 @@
     <main id="page-main" class="row">
         <section id="pageSection" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
             <div>
-               
-                <h3>Hello "<%= title %>"</h3>
-                <ul>
-                  <% for(var i = 0; i < people.length; i+=1) { %>
-                    <li><%= people[i]["name"] %></li>
-                  <% } %>
-                </ul>
-
+               <% if (title === "Home") { %>
+					<% include ./home/home %>
+				<% } else if (title === "Login") { %>
+					<% include ./account/login %>
+				<% } else if (title === "Register") { %>
+					<% include ./account/register %>
+				<% } %>
             </div>
         </section>
         <aside id="page-aside" class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></aside>

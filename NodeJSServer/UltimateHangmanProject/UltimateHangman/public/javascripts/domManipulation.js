@@ -131,8 +131,8 @@ $(window).on('load', function () {
         let navLi = $(li).clone(true),
                 navImg = $(img).clone(true),
                 navLink = $(a).clone(true),
-              
-                arrButtonImgs = ['/images/home.png', '/images/play.png', '/images/ranking.png', '/images/contacts.png'];
+                arrButtonImgs = ['/images/home.png', '/images/play.png', '/images/ranking.png', '/images/contacts.png'],
+                arrButtonHrefs = ['/', '/play', '/leaderboard', '/contacts'];
         
         $(navLi).attr('class', 'nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3');
         // $(navLi).attr('href', `#${arrButtonText[i]}`);
@@ -141,7 +141,7 @@ $(window).on('load', function () {
         $(navImg).attr('class', 'nav-img .img-responsive');
         
         $(navLink).html(arrButtonText[i].toUpperCase());
-        $(navLink).attr('href', `$ { arrButtonText[i] }`);
+        $(navLink).attr('href', arrButtonHrefs[i]);
         $(navLink).attr('class', 'nav-text');
 
         $(navImg).appendTo(navLi);

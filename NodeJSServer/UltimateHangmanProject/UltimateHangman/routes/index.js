@@ -5,17 +5,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Ultimate Hangman', people: [{ name: "Petar" }, { name: "Ivan" }] });
+    res.render('index', { title: 'Home', people: [{ name: "Petar" }, { name: "Ivan" }] });
 });
 
 /* GET login page */
 router.get('/login', function (req, res) {
-    res.render('account/login', { title: 'Login' });
+    res.render('index', { title: 'Login' });
 });
 
 /* GET register page */
 router.get('/register', function (req, res) { 
-    res.render('account/register', { title: 'Register' });
+    res.render('index', { title: 'Register' });
 });
 
 module.exports = router;
