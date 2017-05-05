@@ -54,7 +54,9 @@ exports.register = function (req, res) {
         // res.write(body);
             res.end();
 
-            if (body !== '[]') {
+            var obj = JSON.parse(body);
+
+            if (Object.keys(obj) > 0) {
                 console.log('User is already registered!')
             } else {
             
