@@ -1,0 +1,30 @@
+﻿<!--<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+	<h3>Play</h3>
+  
+  </body>
+</html> -->
+
+<h1>Contact form:</h1>  
+<form id="ajax-contact" method="POST" action="/messageSent">
+    <div class="contact-field">
+        <input type="email" id="contactEmail" name="contactEmail" placeholder="Username/email*" maxlength="30" required="true" />
+    </div>
+    <div class="contact-field">
+        <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject*" maxlength="30" required="true" />
+    </div>
+
+    <div class="contact-field">
+        <textarea id="contactMessage" name="contactMessage" placeholder="Message*" maxlength="200" required="true"></textarea>
+    </div>
+    <div class="contact-send-btn">
+        <input type="button" id="contactSend" value="Send"></input>
+    </div>
+    <div class="contact-clear-btn">
+        <input type="reset" id="contactClear" value="Clear"></input>
+    </div>
+</form>

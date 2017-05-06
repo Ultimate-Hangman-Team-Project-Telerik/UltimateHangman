@@ -5,7 +5,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Home', people: [{ name: "Petar" }, { name: "Ivan" }] });
+    res.render('index', { title: 'Home'});
+});
+
+router.get('/#home', function (req, res) { 
+    res.render('index', { title: 'Welcome to Ultimate Hangman' });
 });
 
 /* GET login page */
@@ -14,9 +18,27 @@ router.get('/login', function (req, res) {
 });
 
 /* GET register page */
-router.get('/register', function (req, res) { 
+router.get('/#register', function (req, res) { 
     res.render('index', { title: 'Register' });
 });
+
+/* GET contacts page */
+
+router.get('/#contacts', function (req, res) { 
+    res.render('index', { title: 'Contacts' });
+});
+
+/* GET play page */
+
+router.get('/#play', function (req, res) { 
+    res.render('index', { title: 'Play' });
+});
+
+/* GET leaderboard page */
+router.get('/#leaderboard', function (req, res) { 
+    res.render('index', { title: 'Leaderboard' });
+});
+
 
 module.exports = router;
 

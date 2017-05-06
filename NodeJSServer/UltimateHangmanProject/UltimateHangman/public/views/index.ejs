@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <link href="/stylesheets/styleDom.css" rel="stylesheet">
+    <link href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href=" https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script src="/javascripts/navigo.min.js" ></script>
+    <script src="/javascripts/router.js" ></script> 
+    <script src="/javascripts/domManipulation.js"></script>
+  </head>
+  <body class="container"> 
+    <header id="page-header" class="row" ></header>
+    <nav id="page-nav" class="row"></nav>
+    <main id="page-main" class="row">
+        <section id="pageSection" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div id="page-content">
+              	<h1>Welcome to UltimateHangman!</h1>
+                <h4>This is a game that some of you may have played in their childhood. <br/>
+                    The rules are simple - guess the word, stay alive!<br/>
+                    Happy guessing!
+
+                </h4>
+            </div>
+        </section>
+        <aside id="page-aside" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+           
+        
+        </aside>
+    </main>
+    <footer id="page-footer" class="row">
+        <div id="footer-copyright" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div id="footer-icons">
+                <!-- <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://twitter.com/UltimateHangman" class="twitter-follow-button" data-show-count="false">Follow @UltimateHangman</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+                <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">
+                    <img id="shareTwitter" class="img-responsive" src="http://albinolullaby.com/img/s_tweet_button.png" alt="share-on-twitter">
+                </a>
+                <a href="https://twitter.com/UltimateHangman" class="twitter-follow-button" data-show-count="false">
+                     <img id="followTwitter" class="img-responsive" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS32e32Xxu4Vohk2Ht76YHYCVrhkcd-ljgYXtVeuQf9KDNiT17wKg" alt="follow-on-twitter">
+                </a>
+                <a href="https://youtube.com" class="youtube-button">
+                     <img id="youtube" class="img-responsive" src="https://app.songtrust.com/static/landingpages/YouTube.jpg" alt="youtube">
+                </a>
+               
+            </div>
+            <span class="copyright" id="copyright" class="row"> <% include ./footer %> </span>
+        </div>
+        <div id="footer-social" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div id="fb-root" class="embed-responsive embed-responsive-4by3">
+                <iframe id="facebook" class="embed-responsive-item" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FUltimateHangman%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        
+                <!--   <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fultimatehangman&width=450&layout=standard&action=like&size=small&show_faces=false&share=false&height=35&appId" width="200" height="50" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Ffacebook.com%2Fultimatehangman&width=64&height=65&layout=button&size=small&show_faces=false&appId" width="100" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fultimatehangman&layout=button&size=small&mobile_iframe=true&width=58&height=20&appId" width="100" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    -->
+            </div>
+        </div>
+       
+    </footer>
+  </body>
+</html>

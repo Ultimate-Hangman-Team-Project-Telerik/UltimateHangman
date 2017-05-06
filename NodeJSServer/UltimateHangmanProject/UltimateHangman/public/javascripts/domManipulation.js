@@ -100,9 +100,12 @@ $(window).on('load', function () {
     
     //REGISTER BUTTON
     $(registerButton).attr('id', 'register');
-    $(registerButton).attr('onclick', 'window.location.href="/register"');
+    $(registerButton).attr('onclick', 'window.location.href="/#register"');
     $(registerButton).attr('class', 'btn btn-primary');
     $(registerButton).attr('value', 'Register');
+    $(registerButton).on('click', function(e) {
+        e.preventDefault()
+    })
     $(registerButton).appendTo(formLogIn);
     
     //FORM-CONTAINER
@@ -119,7 +122,7 @@ $(window).on('load', function () {
     //NAVIGATION
     let navContainer = $(div).clone(true),
         navUl = $(ul).clone(true),   
-        arrButtonText = ['home', 'play now', 'ranking', 'contact'];
+        arrButtonText = ['home', 'play', 'ranking', 'contact'];
     
     
     $(navContainer).attr('id', 'nav-container')
@@ -132,7 +135,7 @@ $(window).on('load', function () {
                 navImg = $(img).clone(true),
                 navLink = $(a).clone(true),
                 arrButtonImgs = ['/images/home.png', '/images/play.png', '/images/ranking.png', '/images/contacts.png'],
-                arrButtonHrefs = ['/', '/play', '/leaderboard', '/contacts'];
+                arrButtonHrefs = ['/#home', '/#play', '/#leaderboard', '/#contacts'];
         
         $(navLi).attr('class', 'nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3');
         // $(navLi).attr('href', `#${arrButtonText[i]}`);
@@ -205,13 +208,15 @@ $(window).on('load', function () {
     //FOOTER
 
 
-    let     footerContainer = $('#page-footer'),
+  /*  let     footerContainer = $('#page-footer'),
             copirightContainer = $('#footer-copyright'),
-            iconContainer = $(div).clone(true),
+            socialContainer = $(div).clone(true),
             arrIconsImgs = ['../../images/facebook.png', '../../images/Youtube.png'];
 
-    $(copirightContainer).attr('class', 'col-xs-9 col-sm-9 col-md-9 col-lg-9');
+    $(copirightContainer).attr('class', 'col-xs-8 col-sm-8 col-md-8 col-lg-8');
+    $(copirightContainer).appendTo(footerContainer);
 
+   
 
     $(arrIconsImgs).each(function(i) {
     let     icon = $(img).clone(true),
@@ -222,12 +227,43 @@ $(window).on('load', function () {
             $(icon).attr('class', 'icon');
             $(iconLink).attr('href', arrLinks[i]);
             $(icon).appendTo(iconLink);
-            $(iconLink).appendTo(iconContainer);
+            $(iconLink).appendTo(socialContainer);
 
     });
 
-        $(iconContainer).attr('class',  'col-xs-3 col-sm-3 col-md-3 col-lg-3');
-        $(iconContainer).attr('id',  'icon-container');
-        $(iconContainer).appendTo(footerContainer);
+        $(socialContainer).attr('class',  'col-xs-4 col-sm-4 col-md-4 col-lg-4');
+        $(socialContainer).attr('id',  'icon-container');
+        $(socialContainer).appendTo(footerContainer);
+*/
+
+
+// IMPORT FACEBOOK 
+
+(function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk')
+      );
 
 });
+
+// CONTACT FORM
+
+ 
+    $("#contactSend").on ('click', (function(){      
+        var sendFrom = $("#contactEmail").val();
+        var subject = $("#contactSubject").val();
+        var message = $("#contactMessage").val();
+
+       // $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+        }
+
+});
+    }));

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 //var engine = require('ejs-locals');
 var server = require("./core/server");
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var level = require('./routes/level');
@@ -18,7 +19,7 @@ var app = express();
 //app.set('port', 8098);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/views'));
 
 //app.engine('ejs', engine);
 app.set('view engine', 'ejs');
@@ -68,6 +69,10 @@ app.use(function (err, req, res, next) {
     });
 });
 
+
+app.listen(3000, function () {
+console.log("Express server listening on port 3000");
+});
 
 /* file exportation */
 module.exports = app;

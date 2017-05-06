@@ -30,7 +30,7 @@ body {
 }
 
 #page-main {
-    height: 63%; 
+    height: 70%; 
 }
 
 #page-section {
@@ -43,8 +43,9 @@ body {
 }
 
 #page-footer {
-    height: 6%;
+    height: 21%;
 }
+
 
 #img-container, #title-container, #login-container, #form-login, #button-field, #input-field {
     height: 100%;
@@ -77,20 +78,20 @@ body {
 
 #sign-in  {
     display: block;
-    margin: 2% auto;
+    margin: 1% auto;
     height: 15%;
     width: 30%;
     font-size: 1vw;
     text-align: center;
-    padding: 0% 5% 5% 5%;
+    padding: 0% 2% 2% 2%;
 }
 
 #register {
     display: block;
-    margin: 2% auto;
+    margin: 1% auto;
     height: 15%;
     width: 40%;
-    padding: 0% 5% 5% 5%;
+    padding: 0% 2% 2% 2%;
     font-size: 1vw;
 }
 
@@ -190,16 +191,42 @@ a {
     margin: 1% auto 0 auto;
 }
 
-.icon {
-    height: 80%;
-    margin: 1% 3% 0 auto;
+
+#facebook {
+    width: 100%;
+    height: 130px;;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: inline;
 }
 
-#icon-container {
-    text-align: center;
+.text-muted {
+    margin-top: 1%;  
+    font-size: 15px;
 }
 
+#shareTwitter {
+    width: 140px;
+    height: 50px;
+    margin-top: 4px;
+    display: inline;
+    margin: 1%;
+}
 
+#followTwitter {
+    width: 140px;
+    height: 50px;
+    display: inline;
+    margin: 1%;
+}
+
+#youtube {
+    width: 140px;
+    height: 50px;
+    display: inline;
+    margin: 1%;
+}
 
 
 #sign-in-submit, #sign-in-register, #register-button, #register-clear, #contact-send, #contact-submit {
@@ -220,3 +247,4 @@ a {
 #table-chart > thead, th, tbody, td, tr{
     border: 1px solid black;
 }
+
