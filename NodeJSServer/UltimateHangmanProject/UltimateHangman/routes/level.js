@@ -8,7 +8,7 @@ router.get("/getLevel", function (req, res) {
 });
 
 router.post("/levelFinish", function (req, res) {
-    res.send("level finish");
+    wordController.checkWord(req, res);
 });
 
 module.exports = router;
