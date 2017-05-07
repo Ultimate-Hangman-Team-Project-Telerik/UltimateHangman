@@ -4,6 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 //var engine = require('ejs-locals');
 var server = require("./core/server");
 
@@ -11,6 +12,7 @@ var server = require("./core/server");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var level = require('./routes/level');
+var settings = require('./settings');
 
 
 /* App initialization */
@@ -29,6 +31,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+    name: settings.cookieName,
+    secret: settings.sessionSecret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}));
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 

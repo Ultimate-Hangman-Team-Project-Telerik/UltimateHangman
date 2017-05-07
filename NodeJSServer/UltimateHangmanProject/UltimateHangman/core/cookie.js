@@ -15,3 +15,7 @@ exports.getCookie = function (req, res) {
     res.write(JSON.stringify({ cookie: currentCookie }));
     res.end();
 }
+
+exports.isUserLogged = function (req) {
+    return req.cookies[settings.cookieName] !== undefined;
+}

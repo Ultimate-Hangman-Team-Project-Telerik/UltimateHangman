@@ -6,46 +6,57 @@ var cookie = require("../core/cookie");
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Home'});
+    res.render('index', { title: 'Home' });
 });
 
-router.get('/#home', function (req, res) { 
+router.get('/#home', function (req, res) {
     res.render('index', { title: 'Welcome to Ultimate Hangman' });
 });
 
 /* GET login page */
 router.get('/login', function (req, res) {
-    res.render('index', { title: 'Login' });
+    res.render('index', {
+        title: !cookie.isUserLogged(req) ? 
+            'Login' : 'Error'
+    });
 });
 
 /* GET register page */
-router.get('/#register', function (req, res) { 
-    res.render('index', { title: 'Register' });
+router.get('/#register', function (req, res) {
+    res.render('index', {
+        title: !cookie.isUserLogged(req) ? 
+            'Register' : 'Error'
+    });
+    
 });
 
 /* GET contacts page */
 
-router.get('/#contacts', function (req, res) { 
+router.get('/#contacts', function (req, res) {
     res.render('index', { title: 'Contacts' });
 });
 
 /* GET play page */
 
-router.get('/#play', function (req, res) { 
-    res.render('index', { title: 'Play' });
+router.get('/play', function (req, res) {
+    var isUserLogged = cookie.isUserLogged(req);
+    var currentTitle = isUserLogged ? 'Play' : 'Login'
+    res.render('index', {
+        title: currentTitle
+    });
 });
 
 /* GET leaderboard page */
-router.get('/#leaderboard', function (req, res) { 
+router.get('/#leaderboard', function (req, res) {
     res.render('index', { title: 'Leaderboard' });
 });
 
 
 /* Cookies test queries */
-router.get("/cookieSet/:username", function (req, res) { 
+router.get("/cookieSet/:username", function (req, res) {
     cookie.setCookie(req, res);
 });
-router.get("/cookieGet", function (req, res) { 
+router.get("/cookieGet", function (req, res) {
     cookie.getCookie(req, res);
 });
 
