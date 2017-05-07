@@ -8,8 +8,8 @@
     <link href=" https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-    <script src="/javascripts/domManipulation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/javascripts/domManipulation.js"></script>  
   </head>
   <body class="container"> 
     <header id="page-header" class="row" ></header>
@@ -23,6 +23,8 @@
 					<% include ./account/login %>
 				<% } else if (title === "Register") { %>
 					<% include ./account/register %>
+				<% } else if (title === "Contacts") { %>
+					<% include ./contact/contact %>
 				<% } else if (title === "Error") { %>
 					<% include ./error %>
 				<% } %>

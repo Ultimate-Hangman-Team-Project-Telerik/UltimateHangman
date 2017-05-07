@@ -12,6 +12,7 @@ var server = require("./core/server");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var level = require('./routes/level');
+var contacts = require('./routes/contact');
 var settings = require('./settings');
 
 
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/level', level);
+app.use('/contacts', contacts);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
