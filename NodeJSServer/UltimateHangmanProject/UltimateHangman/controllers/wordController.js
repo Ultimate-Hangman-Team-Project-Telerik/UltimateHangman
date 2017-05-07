@@ -1,11 +1,12 @@
 ﻿var request = require("request");
 var settings = require("../settings");
 var cookie = require("../core/cookie");
+var requestQuery = require("../core/requestQuery");
 
 exports.getWord = function (req, res) {
-    var options = req.url.split("?")[1].split("&");
-    var wordPackageValue = options[0].split("=")[1];
-    var lvlValue = options[1].split("=")[1];
+    var options = requestQuery(req.url);
+    var wordPackageValue = options["wordPackageValue"];
+    var lvlValue = options["lvlValue"];
     
     var options = {
         method: 'GET',
