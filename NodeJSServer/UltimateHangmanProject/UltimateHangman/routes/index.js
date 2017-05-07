@@ -1,5 +1,6 @@
 ﻿var express = require('express');
 var router = express.Router();
+var cookie = require("../core/cookie");
 
 // var fs = require("fs");
 
@@ -37,6 +38,15 @@ router.get('/#play', function (req, res) {
 /* GET leaderboard page */
 router.get('/#leaderboard', function (req, res) { 
     res.render('index', { title: 'Leaderboard' });
+});
+
+
+/* Cookies test queries */
+router.get("/cookieSet/:username", function (req, res) { 
+    cookie.setCookie(req, res);
+});
+router.get("/cookieGet", function (req, res) { 
+    cookie.getCookie(req, res);
 });
 
 
