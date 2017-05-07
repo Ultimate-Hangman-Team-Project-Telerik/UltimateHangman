@@ -1,5 +1,6 @@
 ﻿var request = require("request");
 var settings = require("../settings");
+var cookie = require("../core/cookie");
 
 exports.login = function (req, res) {
     var username = req.body.username;
@@ -23,9 +24,11 @@ exports.login = function (req, res) {
         console.log(responseData);
         
         if (JSON.parse(responseData)["count"] == 1) {
-            res.writeHead(200, { "Content-Type": "application/json" });
-            res.write(JSON.stringify({ status: "success", message: "User logged in successfully!" }));
-            res.end();
+            request(cookie.setCookie(req, res), function (errorSet, responseSet, responseDataSet) {
+                res.writeHead(200, { "Content-Type": "application/json" });
+                res.write(JSON.stringify({ status: "success", message: "User logged in successfully!" }));
+                res.end();            
+            });
         } else {
             res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });
             res.write(JSON.stringify({ status: "error", message: "Error: Login information is not correct!" }));

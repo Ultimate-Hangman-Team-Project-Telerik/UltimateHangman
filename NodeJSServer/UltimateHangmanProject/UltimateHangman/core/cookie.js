@@ -19,3 +19,8 @@ exports.getCookie = function (req, res) {
 exports.isUserLogged = function (req) {
     return req.cookies[settings.cookieName] !== undefined;
 }
+
+exports.getUsername = function (req) {
+    return req.cookies[settings.cookieName] ?
+        req.cookies[settings.cookieName].split("=")[1] : "";
+}
