@@ -6,34 +6,48 @@ var cookie = require("../core/cookie");
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Home' });
+    res.render('index', {
+        title: 'Home',
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
+    });
 });
 
-router.get('/#home', function (req, res) {
-    res.render('index', { title: 'Welcome to Ultimate Hangman' });
+router.get('/home', function (req, res) {
+    res.render('index', {
+        title: 'Home',
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
+    });
 });
 
 /* GET login page */
 router.get('/login', function (req, res) {
     res.render('index', {
         title: !cookie.isUserLogged(req) ? 
-            'Login' : 'Error'
+            'Login' : 'Error',
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
     });
 });
 
 /* GET register page */
-router.get('/#register', function (req, res) {
+router.get('/register', function (req, res) {
     res.render('index', {
         title: !cookie.isUserLogged(req) ? 
-            'Register' : 'Error'
+            'Register' : 'Error',
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
     });
-    
 });
 
 /* GET contacts page */
-
-router.get('/#contacts', function (req, res) {
-    res.render('index', { title: 'Contacts' });
+router.get('/contacts', function (req, res) {
+    res.render('index', {
+        title: 'Contacts',
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
+    });
 });
 
 /* GET play page */
@@ -42,13 +56,21 @@ router.get('/play', function (req, res) {
     var isUserLogged = cookie.isUserLogged(req);
     var currentTitle = isUserLogged ? 'Play' : 'Login'
     res.render('index', {
-        title: currentTitle
+        title: currentTitle, 
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
     });
 });
 
 /* GET leaderboard page */
-router.get('/#leaderboard', function (req, res) {
-    res.render('index', { title: 'Leaderboard' });
+router.get('/leaderboard', function (req, res) {
+    console.log(cookie.isUserLogged(req));
+    console.log(cookie.getUsername(req));
+    res.render('index', {
+        title: 'Leaderboard', 
+        isLogged: cookie.isUserLogged(req), 
+        username: cookie.getUsername(req)
+    });
 });
 
 
