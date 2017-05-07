@@ -5,8 +5,6 @@ var requestQuery = require("../core/requestQuery");
 
 exports.getWord = function (req, res) {
     var requestOptions = requestQuery.queryObject(req.url);
-    console.log(requestOptions);
-
     var wordPackageValue = requestOptions["wordPackageValue"];
     var lvlValue = requestOptions["lvlValue"];
     
