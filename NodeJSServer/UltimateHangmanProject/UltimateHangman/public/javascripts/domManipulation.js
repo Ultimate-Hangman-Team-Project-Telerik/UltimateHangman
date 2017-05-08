@@ -30,10 +30,10 @@ $('#ranking').attr('onclick', 'window.location.href="/#leaderboard"')
 $('#ranking').on('click', function(e) {
     e.preventDefault();
     $.ajax({ 
-        url: ("/users/getLeaderboard"),
+        url: "/users/getLeaderboard",
         type: "GET",
         success: function(success) {
-            console.log(e)
+            console.log(success)
         },
         error: function(error) {
             console.log(error);    

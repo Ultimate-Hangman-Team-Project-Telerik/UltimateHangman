@@ -4,29 +4,40 @@ body, header, nav, main, aside, footer, div, li, ul, a, img {
 }
 
 html { 
-background-image: url('#');
-background-size: cover;
+height: 100%;
+background-image: url('/images/body.jpg');
+background-size: 100%;
 background-repeat: no-repeat;
-height: 100vh;
-width: 100%;
+background-attachment: fixed;
+background-position: center; 
 }
 
 
 body {
     height: 120%;
     width: 100%;
+   
 }
 
 #page-header, #page-nav, #page-main, #page-aside, #page-footer, #img-container {
-    border: 1px solid black;
+   
 }
+
+#logo {
+    width: 100%;
+    height: 100%;
+}
+
 
 #page-header {  
     height: 22%;
+    background-image: url('/images/header.jpg');
+    background-size: 100%;
 }
 
 #page-nav {
     height: 6%;
+    background-color: black;
 
 }
 
@@ -41,10 +52,12 @@ body {
 
 #page-aside {
      height: 100%;
+     opacity: 0.8 !important;
 }
 
 #page-footer {
     height: 23%;
+    background-color: black;
 }
 
 
