@@ -1,5 +1,6 @@
 ﻿var express = require('express');
 var userController = require('../controllers/userController');
+var leaderboardController = require('../controllers/leaderboardController');
 var router = express.Router();
 
 /* GET users listing. */
@@ -9,6 +10,10 @@ router.get("/getUserParameters", function (req, res) {
 
 router.get("/getLeaderboardTable", function (req, res) { 
     res.send("get leaderboard table");
+});
+
+router.get("/getLeaderboard", function (req, res) { 
+   leaderboardController.getLeaderboard(req, res);
 });
 
 /* POST users listing. */

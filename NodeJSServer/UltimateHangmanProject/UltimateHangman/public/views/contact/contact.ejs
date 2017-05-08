@@ -1,19 +1,18 @@
 ﻿<h1>Contact form:</h1>
 <form method="post" action="/contacts/sendEmail">
-  <div class="contact-field">
-    <input type="email" name="contactEmail" placeholder="Username/email*" maxlength="30" required="true" />
+  <div class="contact-field form-group">
+    <input type="email" class="form-control" name="contactEmail" placeholder="Username/email*" maxlength="30" required="true" />
   </div>
-  <div class="contact-field">
-    <input type="text" name="contactSubject" placeholder="Subject*" maxlength="30" required="true" />
+  <div class="contact-field form-group">
+    <input type="text" class="form-control" name="contactSubject" placeholder="Subject*" maxlength="30" required="true" />
   </div>
-
-  <div class="contact-field">
-    <textarea name="contactMessage" placeholder="Message*" maxlength="200" required="true"></textarea>
+  <div class="contact-field form-group">
+    <textarea name="contactMessage" class="form-control" placeholder="Message*" maxlength="200" required="true"></textarea>
   </div>
   <div class="contact-send-btn">
-    <input type="submit" value="Send"></input>
+    <input type="submit" class="btn btn-warning btn-lg" value="Send"></input>
   </div>
   <div class="contact-clear-btn">
-    <input type="reset" value="Clear"></input>
+    <input type="reset"class="btn btn-warning btn-lg"  value="Clear"></input>
   </div>
 </form>
