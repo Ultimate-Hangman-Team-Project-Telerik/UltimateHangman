@@ -41,6 +41,14 @@ exports.register = function (req, res) {
     var fullname = req.body.fullname;
     var email = req.body.email;
     
+    if (!username || username.length == 0 ||
+            !password || password.length == 0 ||
+            !repeatPassword || repeatPassword.length == 0) {
+        res.redirect('/register?modalMessage=' + 'Error! You haven`t filled all required fields! Please try again!');
+        return;
+    }
+    
+    
     if (password != repeatPassword) {
         res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });
         res.write(JSON.stringify({ status: "error", message: "Error: Password must equal with repeat password!" }));
