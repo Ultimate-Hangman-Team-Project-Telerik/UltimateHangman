@@ -4,7 +4,7 @@ var settings = require("../settings");
 exports.sendEmail = function (req, res) {
     var from = req.body.contactEmail;
     var subject = req.body.contactSubject;
-    var textBody = from + " <br />"
+    var textBody = '<a href="mailto:' + from + '">' + from + '</a> <br />'
     textBody += req.body.contactMessage;
 
     var transporter = nodemailer.createTransport(settings.nodemailerTransporter);
