@@ -87,13 +87,11 @@ $("#contactSend").on ('click', (function(){
         {
             $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
         }
-
 });
     }));
 
     if ($($("#pageModal .modal-body p")[0]).text().length > 0) {
         $('#pageModal').modal();
-    }
+    };
     
-
 });
