@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
         title: 'Home',
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -24,7 +24,7 @@ router.get('/home', function (req, res) {
         title: 'Home',
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -37,7 +37,7 @@ router.get('/login', function (req, res) {
             'Login' : 'Error',
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -50,7 +50,7 @@ router.get('/register', function (req, res) {
             'Register' : 'Error',
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -62,7 +62,7 @@ router.get('/contacts', function (req, res) {
         title: 'Contacts',
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -76,7 +76,7 @@ router.get('/play', function (req, res) {
         title: currentTitle, 
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
@@ -88,7 +88,7 @@ router.get('/leaderboard', function (req, res) {
         title: 'Leaderboard', 
         isLogged: cookie.isUserLogged(req), 
         username: cookie.getUsername(req),
-        modalMessage: query['modalMessage']
+        modalMessage: query['modalMessage'] ? decodeURIComponent(query['modalMessage']) : ''
     });
 });
 
