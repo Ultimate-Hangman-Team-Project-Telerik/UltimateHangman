@@ -24,11 +24,8 @@ exports.login = function (req, res) {
         console.log(responseData);
         
         if (JSON.parse(responseData)["count"] == 1) {
-            request(cookie.setCookie(req, res), function (errorSet, responseSet, responseDataSet) {
-                res.writeHead(200, { "Content-Type": "application/json" });
-                res.write(JSON.stringify({ status: "success", message: "User logged in successfully!" }));
-                res.end();            
-            });
+            req.params.username = username;
+            cookie.setCookie(req, res);
         } else {
             res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });
             res.write(JSON.stringify({ status: "error", message: "Error: Login information is not correct!" }));
