@@ -36,7 +36,7 @@ exports.checkWord = function (req, res) {
     if (status === "success") {
         var options = {
             method: 'GET',
-            url: settings.url + '/wordsCollection',
+            url: settings.url + '/accountUsers',
             qs: {
                 query: '{"username":"' + cookie.getUsername(req) + '"}'
             },
