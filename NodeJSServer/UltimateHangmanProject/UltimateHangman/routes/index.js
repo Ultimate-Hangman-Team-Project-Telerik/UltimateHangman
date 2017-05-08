@@ -1,75 +1,94 @@
 ﻿var express = require('express');
 var router = express.Router();
-var cookie = require("../core/cookie");
+var cookie = require('../core/cookie');
+var requestQuery = require('../core/requestQuery');
 
 // var fs = require("fs");
 
 /* GET home page. */
 router.get('/', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: 'Home',
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 router.get('/home', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: 'Home',
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 /* GET login page */
 router.get('/login', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: !cookie.isUserLogged(req) ? 
             'Login' : 'Error',
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 /* GET register page */
 router.get('/register', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: !cookie.isUserLogged(req) ? 
             'Register' : 'Error',
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 /* GET contacts page */
 router.get('/contacts', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: 'Contacts',
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 /* GET play page */
 
 router.get('/play', function (req, res) {
+    var query = requestQuery.queryObject(req.url);
     var isUserLogged = cookie.isUserLogged(req);
     var currentTitle = isUserLogged ? 'Play' : 'Login'
     res.render('index', {
         title: currentTitle, 
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 
 /* GET leaderboard page */
 router.get('/leaderboard', function (req, res) {
-    console.log(cookie.isUserLogged(req));
-    console.log(cookie.getUsername(req));
+    var query = requestQuery.queryObject(req.url);
+
     res.render('index', {
         title: 'Leaderboard', 
         isLogged: cookie.isUserLogged(req), 
-        username: cookie.getUsername(req)
+        username: cookie.getUsername(req),
+        modalMessage: query['modalMessage']
     });
 });
 

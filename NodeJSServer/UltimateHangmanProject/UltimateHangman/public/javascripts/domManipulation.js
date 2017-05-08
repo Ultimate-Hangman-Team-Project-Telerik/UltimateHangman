@@ -56,4 +56,9 @@ $("#contactSend").on ('click', (function(){
 });
     }));
 
+    if ($($("#pageModal .modal-body p")[0]).text().length > 0) {
+        $('#pageModal').modal();
+    }
+    
+
 });

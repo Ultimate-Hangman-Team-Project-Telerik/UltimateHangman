@@ -18,9 +18,11 @@ exports.sendEmail = function (req, res) {
     
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            res.send(JSON.stringify({ status: "error", message: error }));
+            res.redirect('/contacts?modalMessage=' + 'error');
+            // res.send(JSON.stringify({ status: "error", message: error }));
         } else {
-            res.send(JSON.stringify({ status: "success", message: info.response }));
+            res.redirect('/contacts?modalMessage=' + 'success');
+            // res.send(JSON.stringify({ status: "success", message: info.response }));
         };
     });    
 }
