@@ -72,9 +72,10 @@ exports.register = function (req, res) {
             request(options, function (postError, postResponse, postData) {
                 if (postError) throw new Error(postError);
                 
-                res.writeHead(200, { "Content-Type": "application/json" });
-                res.write(JSON.stringify({ status: "success", message: "User created successfully!" }));
-                res.end();
+                exports.login(req, res);
+                //res.writeHead(200, { "Content-Type": "application/json" });
+                //res.write(JSON.stringify({ status: "success", message: "User created successfully!" }));
+                //res.end();
             });
         } else {
             res.writeHead(500, "Internal Error Occured", { "Content-Type": "application/json" });

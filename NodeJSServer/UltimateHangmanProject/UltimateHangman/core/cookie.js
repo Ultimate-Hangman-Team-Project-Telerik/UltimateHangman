@@ -3,7 +3,7 @@
 exports.setCookie = function (req, res) {
     res.cookie(settings.cookieName, "username=" + req.params.username, {
         expires: new Date(Date.now() + settings.cookieExpireTimeLength)
-    });    
+    });
     res.redirect('/');
     //res.writeHead(200, { "Content-Type": "application/json" });
     //res.write(JSON.stringify({ status: "success" }));
