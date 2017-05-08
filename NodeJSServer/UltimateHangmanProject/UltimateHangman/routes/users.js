@@ -21,6 +21,10 @@ router.post("/userLogin", function (req, res) {
     userController.login(req, res);
 });
 
+router.post("/userLogout", function (req, res) { 
+    userController.logout(req, res);
+});
+
 router.post("/register", function (req, res) { 
     res.send("respond register");
 });

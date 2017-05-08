@@ -84,3 +84,11 @@ exports.register = function (req, res) {
         }
     });
 }
+
+exports.logout = function (req, res) {
+    //res.clearCookie(settings.cookieName);
+    res.cookie(settings.cookieName, "", {
+        expires: new Date(Date.now() - 1)
+    });
+    res.redirect('/');
+}

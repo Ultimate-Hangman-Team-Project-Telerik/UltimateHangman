@@ -1,6 +1,9 @@
 ﻿
 <% if (isLogged) { %>
-	Hello, <%= username %>!
+	<form action="/users/userLogout" method="post">
+		<span>Hello, <%= username %>!</span>
+		<button type="submit" class="btn btn-warning">Log Out</button>
+	</form>
 <% } else { %>
 	<form action="/users/userLogin" method="post">
 		<div class="form-group">
