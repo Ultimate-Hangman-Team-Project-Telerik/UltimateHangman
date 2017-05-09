@@ -1,9 +1,39 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-  </head>
-  <body>
-	<h3>Level: </h3>
-  </body>
-</html>
+<div id="game-container" class="row">
+    <div id="hagnman-container" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+        <div id="choose-area"> 
+            <h3> Please, choose category:</h3>
+        </div>
+        <svg class="hidden" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 340 333" enable-background="new 0 0 340 333" xml:space="preserve">
+                <!-- class head-->
+                <circle id="head" class="hidden" cx="150" cy="60" r="40" stroke="black" stroke-width="3" fill="white" fill-opacity="0"/>
+                <!-- class body-->
+                <line id="body" class="hidden" x1="150" y1="100" x2="150" y2="230" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+                <!-- class leftHand-->
+                <line id="leftHand" class="hidden" x1="150" y1="120" x2="90" y2="200" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+                <!-- class rightHand-->
+                <line id="rightHand" class="hidden" x1="150" y1="120" x2="210" y2="200" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+                <!-- class leftLeg -->
+                <line id="leftLeg" class="hidden" x1="150" y1="230" x2="90" y2="300" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+                <!-- class rightLeg -->
+                <line id="rightLeg" class="hidden" x1="150" y1="230" x2="210" y2="300" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10"/>
+
+         </svg>
+    </div>
+    <div id="words-container" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h4 class="info">Level: <span id="level"> </span></h4>
+        <h4 class="info">Category: <span id="category"> </span></h4>
+        <div id="guess-the-word" class="" row=""></div>
+        <div id="keyboard" class="btn-toolbar row"></div>
+        <div id="play-again" class="hidden">
+            <h3>Try again?</h3>
+            <input type="button" value="yes" id="yes" class="play-again btn btn-lg">
+            <input type="button" value="no" id="no" class="play-again btn btn-lg">
+        </div>
+        <div id="win" class="hidden">
+            <h3>Congratulations! Next level?</h3>
+            <input type="button" value="yes" id="yes-win" class="play-again btn btn-lg">
+            <input type="button" value="no" id="no-win" class="play-again btn btn-lg">
+        </div>
+    </div>
+    <style xmlns="http://www.w3.org/2000/svg">.mLzauCNQ_0{stroke-dasharray:400 402;stroke-dashoffset:401;animation:mLzauCNQ_draw 2002ms linear 0ms forwards;}.mLzauCNQ_1{stroke-dasharray:427 429;stroke-dashoffset:428;animation:mLzauCNQ_draw 2137ms linear 2002ms forwards;}.mLzauCNQ_2{stroke-dasharray:34 36;stroke-dashoffset:35;animation:mLzauCNQ_draw 174ms linear 4140ms forwards;}.mLzauCNQ_3{stroke-dasharray:31 33;stroke-dashoffset:32;animation:mLzauCNQ_draw 159ms linear 4315ms forwards;}.mLzauCNQ_4{stroke-dasharray:39 41;stroke-dashoffset:40;animation:mLzauCNQ_draw 199ms linear 4475ms forwards;}.mLzauCNQ_5{stroke-dasharray:26 28;stroke-dashoffset:27;animation:mLzauCNQ_draw 134ms linear 4675ms forwards;}.mLzauCNQ_6{stroke-dasharray:37 39;stroke-dashoffset:38;animation:mLzauCNQ_draw 189ms linear 4810ms forwards;}@keyframes mLzauCNQ_draw{100%{stroke-dashoffset:0;}}@keyframes mLzauCNQ_fade{0%{stroke-opacity:1;}95.65217391304348%{stroke-opacity:1;}100%{stroke-opacity:0;}} </style>
+</div>
