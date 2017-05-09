@@ -49,6 +49,14 @@ function appendTable(success) {
     var td = $('<td>');
     var tbody = $('#tbody')
 
+    
+    let sortedByPoints = success.data.slice(0);
+    sortedByPoints.sort(function(a,b) {
+    let x = a.points;
+    let y = b.points;
+    return y < x ? -1 : y > x ? 1 : 0;
+});
+    
     len = success.data.length;
     console.log(success);
 
@@ -62,14 +70,14 @@ function appendTable(success) {
 
         $(td1).html(i + 1);
         $(td1).appendTo(tr1);
-       
-        $(td2).html(`${success.data[i].username}`);
+      
+        $(td2).html(`${sortedByPoints[i].username}`);
         $(td2).appendTo(tr1);
 
-        $(td3).html(`${success.data[i].lvl}`);
+        $(td3).html(`${sortedByPoints[i].lvl}`);
         $(td3).appendTo(tr1);
          
-        $(td4).html(`${success.data[i].points}`);
+        $(td4).html(`${sortedByPoints[i].points}`);
         $(td4).appendTo(tr1);
 
         $(tr1).appendTo(tbody);
